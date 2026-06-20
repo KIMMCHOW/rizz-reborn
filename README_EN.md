@@ -1,6 +1,6 @@
-# rizz-reborn
+# 重生之我是把妹王
 
-`rizz-reborn` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex. Its Chinese display name is `重生之我是把妹王`.
+`重生之我是把妹王` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
 
 It is not just a copy of `simp-skill`, and it is not a repackaged WeFlow app. It combines upstream export and analysis ideas into one local workspace:
 
@@ -9,7 +9,7 @@ It is not just a copy of `simp-skill`, and it is not a repackaged WeFlow app. It
 - this project's Python CLI for parsing exports, writing reports, and initializing local memory folders;
 - Codex running the source code directly against private local folders.
 
-The Python distribution and main CLI are named `rizz-reborn`; the importable module is `rizz_reborn`. The upstream `/simp` skill command and the `simp` CLI alias remain only for compatibility with `simp-skill`.
+The internal Python package, CLI command, and `/simp` skill command remain named `simp` for compatibility with upstream `simp-skill`, existing tests, and command entry points. The public project display name is `重生之我是把妹王`.
 
 ## Upstream References
 
@@ -59,7 +59,7 @@ Source mode without installation:
 
 ```powershell
 $env:PYTHONPATH = "D:\Coding\simp\src"
-python -m rizz_reborn.cli --help
+python -m simp_project.cli --help
 ```
 
 ## Environment
@@ -92,13 +92,13 @@ local_data/welive-records/
 Inspect an export:
 
 ```powershell
-python -m rizz_reborn.cli inspect "local_data\welive-records\demo-chat"
+python -m simp_project.cli inspect "local_data\welive-records\demo-chat"
 ```
 
 Write a Markdown report:
 
 ```powershell
-python -m rizz_reborn.cli report "local_data\welive-records\demo-chat" `
+python -m simp_project.cli report "local_data\welive-records\demo-chat" `
   --name "Demo Target" `
   --output "local_outputs\demo.md"
 ```
@@ -106,7 +106,7 @@ python -m rizz_reborn.cli report "local_data\welive-records\demo-chat" `
 Initialize a local memory folder:
 
 ```powershell
-python -m rizz_reborn.cli init-crush "local_data\welive-records\demo-chat" `
+python -m simp_project.cli init-crush "local_data\welive-records\demo-chat" `
   --name "Demo Target" `
   --slug "demo"
 ```

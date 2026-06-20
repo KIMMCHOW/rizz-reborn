@@ -3,20 +3,19 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rizz-reborn"
+name = "simp"
 version = "0.1.0"
-description = "rizz-reborn: WeChat export analysis plus Codex relationship-analysis workflow."
+description = "重生之我是把妹王: WeChat export analysis plus Codex simp skill memory project."
 readme = "PROJECT.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-  { name = "rizz-reborn contributors" }
+  { name = "simp contributors" }
 ]
 dependencies = []
 
 [project.scripts]
-rizz-reborn = "rizz_reborn.cli:main"
-simp = "rizz_reborn.cli:main"
+simp = "simp_project.cli:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

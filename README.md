@@ -1,6 +1,6 @@
-# rizz-reborn
+# 重生之我是把妹王
 
-`rizz-reborn`（中文名：重生之我是把妹王）是一个独立的本地项目，用来把微信聊天记录导出、结构化分析、追爱军师档案和 Codex 工作流串起来。
+`重生之我是把妹王` 是一个独立的本地项目，用来把微信聊天记录导出、结构化分析、追爱军师档案和 Codex 工作流串起来。
 
 它不是 `simp-skill` 的简单复制，也不是 WeFlow 的二次打包。这个项目把两个上游能力组合成一个可维护的本地工作台：
 
@@ -9,7 +9,7 @@
 - 用本项目的 Python CLI 解析导出、生成报告、建立本地档案；
 - 由 Codex 直接读取源码和本地私有目录完成分析。
 
-> 项目发行名和主 CLI 已改为 `rizz-reborn`，Python 模块名为 `rizz_reborn`。上游 `simp-skill` 自带的 `/simp` skill 指令名保持不变，`simp` CLI 也作为兼容别名保留。
+> 工程内部仍保留 `simp` 作为 Python 包名、CLI 命令和 `/simp` skill 指令名。这是为了兼容上游 `simp-skill`、现有测试和命令入口；对外项目名使用「重生之我是把妹王」。
 
 ## 上游引用
 
@@ -52,8 +52,8 @@ record/
 ## 项目结构
 
 ```text
-rizz-reborn/                # 项目展示名：rizz-reborn
-  src/rizz_reborn/           # 本项目 CLI 和 JSONL 解析代码
+simp/                       # 项目展示名：重生之我是把妹王
+  src/simp_project/          # 本项目 CLI 和 JSONL 解析代码
   SKILL.md                   # 追爱军师 skill 入口
   prompts/                   # 追爱军师分析提示词
   tools/                     # simp-skill 原始辅助工具
@@ -80,7 +80,7 @@ python -m pip install -e .
 
 ```powershell
 $env:PYTHONPATH = "D:\Coding\simp\src"
-python -m rizz_reborn.cli --help
+python -m simp_project.cli --help
 ```
 
 ## 环境变量
@@ -129,21 +129,19 @@ local_data/welive-records/someone/wxid_xxx.jsonl
 ### 2. 查看导出摘要
 
 ```powershell
-python -m rizz_reborn.cli inspect "local_data\welive-records\demo-chat"
+python -m simp_project.cli inspect "local_data\welive-records\demo-chat"
 ```
 
-如果已经安装为 editable package，也可以用脚本入口。主命令名为 `rizz-reborn`：
+如果已经安装为 editable package，也可以用脚本入口。命令名仍为 `simp`：
 
 ```powershell
-rizz-reborn inspect "local_data\welive-records\demo-chat"
+simp inspect "local_data\welive-records\demo-chat"
 ```
-
-旧的 `simp inspect ...` 仍可作为兼容别名使用。
 
 ### 3. 生成 Markdown 报告
 
 ```powershell
-python -m rizz_reborn.cli report "local_data\welive-records\demo-chat" `
+python -m simp_project.cli report "local_data\welive-records\demo-chat" `
   --name "示例对象" `
   --output "local_outputs\demo.md"
 ```
@@ -151,7 +149,7 @@ python -m rizz_reborn.cli report "local_data\welive-records\demo-chat" `
 ### 4. 建立本地档案
 
 ```powershell
-python -m rizz_reborn.cli init-crush "local_data\welive-records\demo-chat" `
+python -m simp_project.cli init-crush "local_data\welive-records\demo-chat" `
   --name "示例对象" `
   --slug "demo"
 ```
@@ -172,7 +170,7 @@ local_data/crushes/demo/
 
 Codex 在本项目中应直接读取：
 
-- `src/rizz_reborn/` 的解析代码
+- `src/simp_project/` 的解析代码
 - `SKILL.md` 和 `prompts/` 的分析规则
 - `.env` 中配置的私有目录
 - `local_data/crushes/` 中的本地档案

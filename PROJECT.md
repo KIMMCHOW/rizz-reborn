@@ -1,10 +1,10 @@
-# rizz-reborn Project Notes
+# 重生之我是把妹王 Project Notes
 
-`rizz-reborn` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex. Its Chinese display name is `重生之我是把妹王`.
+`重生之我是把妹王` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
 
 It references upstream repositories, but it is not merely a fork of either one. The root README is the user-facing project guide; this file keeps implementation notes.
 
-The Python distribution and main CLI are named `rizz-reborn`; the importable module is `rizz_reborn`. The upstream `/simp` skill command and the `simp` CLI alias remain only for compatibility with `simp-skill`.
+The internal package and command names remain `simp` for compatibility. Treat `重生之我是把妹王` as the product/project display name.
 
 ## Upstream Sources
 
@@ -21,14 +21,14 @@ From `D:\Coding\simp`:
 
 ```powershell
 python -m pip install -e .
-python -m rizz_reborn.cli inspect "local_data\welive-records\some-chat"
-python -m rizz_reborn.cli report "local_data\welive-records\some-chat" --name "示例" --output "local_outputs\example.md"
+python -m simp_project.cli inspect "local_data\welive-records\some-chat"
+python -m simp_project.cli report "local_data\welive-records\some-chat" --name "示例" --output "local_outputs\example.md"
 ```
 
 Create a new memory folder from an export:
 
 ```powershell
-python -m rizz_reborn.cli init-crush "local_data\welive-records\some-chat" --name "示例" --slug "example"
+python -m simp_project.cli init-crush "local_data\welive-records\some-chat" --name "示例" --slug "example"
 ```
 
 ## Runtime Model
@@ -53,7 +53,7 @@ Current environment variables:
 - `SKILL.md`: Codex skill entry.
 - `prompts/`: specialist analysis prompts.
 - `tools/`: original skill helper tools.
-- `src/rizz_reborn/`: project CLI and WeLive JSONL parser.
+- `src/simp_project/`: project CLI and WeLive JSONL parser.
 - `vendor/WeFlow/`: upstream WeFlow repository snapshot.
 - `vendor/simp-skill/`: upstream simp-skill repository snapshot.
 - `local_data/` or `data/`: optional private memory files, ignored by git.
