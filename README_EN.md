@@ -1,6 +1,6 @@
-# simp
+# 重生之我是把妹王
 
-`simp` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
+`重生之我是把妹王` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
 
 It is not just a copy of `simp-skill`, and it is not a repackaged WeFlow app. It combines upstream export and analysis ideas into one local workspace:
 
@@ -8,6 +8,8 @@ It is not just a copy of `simp-skill`, and it is not a repackaged WeFlow app. It
 - `simp-skill` relationship-analysis prompts and memory structure;
 - this project's Python CLI for parsing exports, writing reports, and initializing local memory folders;
 - Codex running the source code directly against private local folders.
+
+The internal Python package, CLI command, and `/simp` skill command remain named `simp` for compatibility with upstream `simp-skill`, existing tests, and command entry points. The public project display name is `重生之我是把妹王`.
 
 ## Upstream References
 

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "simp"
 version = "0.1.0"
-description = "WeChat export analysis plus Codex simp skill memory project."
+description = "重生之我是把妹王: WeChat export analysis plus Codex simp skill memory project."
 readme = "PROJECT.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

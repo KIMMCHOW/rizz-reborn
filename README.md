@@ -1,6 +1,6 @@
-# simp
+# 重生之我是把妹王
 
-`simp` 是一个独立的本地项目，用来把微信聊天记录导出、结构化分析、追爱军师档案和 Codex 工作流串起来。
+`重生之我是把妹王` 是一个独立的本地项目，用来把微信聊天记录导出、结构化分析、追爱军师档案和 Codex 工作流串起来。
 
 它不是 `simp-skill` 的简单复制，也不是 WeFlow 的二次打包。这个项目把两个上游能力组合成一个可维护的本地工作台：
 
@@ -8,6 +8,8 @@
 - 用 `simp-skill` 的追爱军师方法论和记忆结构做关系分析；
 - 用本项目的 Python CLI 解析导出、生成报告、建立本地档案；
 - 由 Codex 直接读取源码和本地私有目录完成分析。
+
+> 工程内部仍保留 `simp` 作为 Python 包名、CLI 命令和 `/simp` skill 指令名。这是为了兼容上游 `simp-skill`、现有测试和命令入口；对外项目名使用「重生之我是把妹王」。
 
 ## 上游引用
 
@@ -50,7 +52,7 @@ record/
 ## 项目结构
 
 ```text
-simp/
+simp/                       # 项目展示名：重生之我是把妹王
   src/simp_project/          # 本项目 CLI 和 JSONL 解析代码
   SKILL.md                   # 追爱军师 skill 入口
   prompts/                   # 追爱军师分析提示词
@@ -130,7 +132,7 @@ local_data/welive-records/someone/wxid_xxx.jsonl
 python -m simp_project.cli inspect "local_data\welive-records\demo-chat"
 ```
 
-如果已经安装为 editable package，也可以用脚本入口：
+如果已经安装为 editable package，也可以用脚本入口。命令名仍为 `simp`：
 
 ```powershell
 simp inspect "local_data\welive-records\demo-chat"

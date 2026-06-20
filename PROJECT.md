@@ -1,8 +1,10 @@
-# simp Project Notes
+# 重生之我是把妹王 Project Notes
 
-`simp` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
+`重生之我是把妹王` is a standalone local project for exporting, parsing, and analyzing WeChat chat records with Codex.
 
 It references upstream repositories, but it is not merely a fork of either one. The root README is the user-facing project guide; this file keeps implementation notes.
+
+The internal package and command names remain `simp` for compatibility. Treat `重生之我是把妹王` as the product/project display name.
 
 ## Upstream Sources
 
