@@ -1,0 +1,25 @@
+# 心上人档案（个人隐私数据，不上传）
+# Crushes. Personal data. Not for upload.
+crushes/
+
+# 实验性内容，不上传
+# Experimental content. Not for upload.
+experiment/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 开发计划与设计文档（本地）
+# Dev plans and specs. Not for upload.
+docs/superpowers/
+
+# 编辑器
+.vscode/
+.idea/

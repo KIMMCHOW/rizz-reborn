@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simp"
+version = "0.1.0"
+description = "WeChat export analysis plus Codex simp skill memory project."
+readme = "PROJECT.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "simp contributors" }
+]
+dependencies = []
+
+[project.scripts]
+simp = "simp_project.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
