@@ -17,7 +17,7 @@ Personal analysis archives and generated reports must stay in ignored local fold
 
 ## Quick Start
 
-From `D:\Coding\simp`:
+From `D:\Coding\rizz-reborn`:
 
 ```powershell
 python -m pip install -e .

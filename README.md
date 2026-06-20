@@ -72,14 +72,14 @@ simp/                       # 项目展示名：重生之我是把妹王
 在项目根目录执行：
 
 ```powershell
-cd D:\Coding\simp
+cd D:\Coding\rizz-reborn
 python -m pip install -e .
 ```
 
 也可以不安装，直接使用源码模式：
 
 ```powershell
-$env:PYTHONPATH = "D:\Coding\simp\src"
+$env:PYTHONPATH = "D:\Coding\rizz-reborn\src"
 python -m simp_project.cli --help
 ```
 

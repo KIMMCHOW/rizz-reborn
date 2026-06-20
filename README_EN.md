@@ -51,14 +51,14 @@ record/
 ## Install
 
 ```powershell
-cd D:\Coding\simp
+cd D:\Coding\rizz-reborn
 python -m pip install -e .
 ```
 
 Source mode without installation:
 
 ```powershell
-$env:PYTHONPATH = "D:\Coding\simp\src"
+$env:PYTHONPATH = "D:\Coding\rizz-reborn\src"
 python -m simp_project.cli --help
 ```
 
