@@ -165,7 +165,10 @@ mode: "hybrid"
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="simp", description="Analyze WeLive/WeChat JSONL exports for simp memory files.")
+    parser = argparse.ArgumentParser(
+        prog="rizz-reborn",
+        description="Analyze WeLive/WeChat JSONL exports for relationship memory files.",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     inspect = sub.add_parser("inspect", help="Print JSON summary for a WeLive export path.")
