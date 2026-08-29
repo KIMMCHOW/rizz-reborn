@@ -62,10 +62,28 @@ simp/                       # 项目展示名：重生之我是把妹王
   vendor/simp-skill/         # simp-skill 上游快照
   docs/wechat-export/        # 微信导出说明
   local_data/                # 本地私有数据，git 忽略
-  local_outputs/             # 本地私有报告，git 忽略
+  local_outputs/             # 分类存放本地私有报告，git 忽略
+  docs/agent/                # 本地输出与 Agent 工作流 SOP
   .env                       # 本机私有配置，git 忽略
   .env.example               # 环境变量模板，可提交
 ```
+
+`local_outputs/` 根目录不直接放文件。生成物按“会话类型 → 对象 slug → 分析领域”分类：
+
+```text
+local_outputs/
+  private-chats/<contact-slug>/
+    overview/
+    language/
+    timeline/
+    relationship/
+    visuals/
+  group-chats/<chat-slug>/
+  cross-chat/<analysis-slug>/
+  system/
+```
+
+完整规则见 [`docs/agent/LOCAL_OUTPUTS_SOP.md`](docs/agent/LOCAL_OUTPUTS_SOP.md)。
 
 ## 安装
 
@@ -143,7 +161,7 @@ simp inspect "local_data\welive-records\demo-chat"
 ```powershell
 python -m simp_project.cli report "local_data\welive-records\demo-chat" `
   --name "示例对象" `
-  --output "local_outputs\demo.md"
+  --output "local_outputs\private-chats\demo-chat\overview\wechat-summary.md"
 ```
 
 ### 4. 建立本地档案
@@ -188,6 +206,8 @@ Codex 在本项目中应直接读取：
 - `outputs/`
 - `*.jsonl`
 - 微信导出的媒体文件、语音、图片
+
+`local_outputs/` 内的文件还必须遵守 [`docs/agent/LOCAL_OUTPUTS_SOP.md`](docs/agent/LOCAL_OUTPUTS_SOP.md)，禁止把生成物散落在根目录。
 
 `.gitignore` 已经覆盖这些路径。提交前可以检查：
 

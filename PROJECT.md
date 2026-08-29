@@ -22,7 +22,7 @@ From `D:\Coding\rizz-reborn`:
 ```powershell
 python -m pip install -e .
 python -m simp_project.cli inspect "local_data\welive-records\some-chat"
-python -m simp_project.cli report "local_data\welive-records\some-chat" --name "示例" --output "local_outputs\example.md"
+python -m simp_project.cli report "local_data\welive-records\some-chat" --name "示例" --output "local_outputs\private-chats\example\overview\wechat-summary.md"
 ```
 
 Create a new memory folder from an export:
@@ -57,7 +57,7 @@ Current environment variables:
 - `vendor/WeFlow/`: upstream WeFlow repository snapshot.
 - `vendor/simp-skill/`: upstream simp-skill repository snapshot.
 - `local_data/` or `data/`: optional private memory files, ignored by git.
-- `local_outputs/` or `outputs/`: optional generated reports, ignored by git.
+- `local_outputs/` or `outputs/`: optional generated reports, ignored by git. Keep the root free of loose files and follow `docs/agent/LOCAL_OUTPUTS_SOP.md`.
 
 ## Privacy
 
@@ -68,5 +68,7 @@ The private data used during project setup has been migrated locally to:
 - `local_data/crushes/`
 - `local_data/welive-records/`
 - `local_outputs/`
+
+Generated artifacts under `local_outputs/` are organized by conversation scope, stable subject slug, and analysis domain. The canonical routing and migration procedure is documented in `docs/agent/LOCAL_OUTPUTS_SOP.md`.
 
 These paths are intentionally ignored by git.

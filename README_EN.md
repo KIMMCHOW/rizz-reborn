@@ -100,7 +100,7 @@ Write a Markdown report:
 ```powershell
 python -m simp_project.cli report "local_data\welive-records\demo-chat" `
   --name "Demo Target" `
-  --output "local_outputs\demo.md"
+  --output "local_outputs\private-chats\demo-chat\overview\wechat-summary.md"
 ```
 
 Initialize a local memory folder:
@@ -123,6 +123,8 @@ Ignored private paths include:
 - `data/`
 - `outputs/`
 - `*.jsonl`
+
+Do not place generated files directly under `local_outputs/`. Route them by conversation scope, stable subject slug, and analysis domain. See [`docs/agent/LOCAL_OUTPUTS_SOP.md`](docs/agent/LOCAL_OUTPUTS_SOP.md).
 
 Before committing, check:
 

@@ -73,8 +73,10 @@ CLI 可以接收 `.jsonl` 文件，也可以接收包含 `.jsonl` 的父目录�
 ```powershell
 python -m simp_project.cli report "local_data\welive-records\some-chat" `
   --name "示例" `
-  --output "local_outputs\example.md"
+  --output "local_outputs\private-chats\example\overview\wechat-summary.md"
 ```
+
+`local_outputs/` 根目录不直接存放文件。按会话类型、对象 slug 和分析领域分类，完整规则见 [`../agent/LOCAL_OUTPUTS_SOP.md`](../agent/LOCAL_OUTPUTS_SOP.md)。
 
 ## 建立本地档案
 
@@ -110,5 +112,7 @@ Codex 应直接读取项目源码：
 
 - `local_data/crushes/`
 - `local_outputs/`
+
+生成报告时必须继续细分到 `local_outputs/<scope>/<slug>/<domain>/`，不要把文件散落在输出根目录。
 
 不要生成单 exe，也不要把原始聊天记录、档案和报告加入 Git。
