@@ -2,7 +2,7 @@
 
 This directory contains source snapshots from upstream projects used by `simp`.
 
-- `WeFlow/`: [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow), used as the WeChat/WeLive export-tool reference.
+- `WeFlow/`: complete WeFlow v5.0.0 source snapshot used to build and run the WeChat/WeLive export tool. Provenance is recorded in `WeFlow/UPSTREAM_SOURCE.md`.
 - `simp-skill/`: [BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill), used as the upstream skill reference.
 
 Nested `.git` directories are intentionally removed so this repository stays a single normal Git project.

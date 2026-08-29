@@ -9,13 +9,15 @@
 
 图形化界面保留在 WeFlow 这一层。
 
-本项目引用 [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) 作为微信聊天导出工具，上游快照位于：
+本项目内置 WeFlow v5.0.0 完整源码快照作为微信聊天导出工具，位于：
 
 ```text
 vendor/WeFlow/
 ```
 
-WeFlow 上游 README 中说明了 GUI 应用、Releases 下载、HTTP API、开发模式等信息。本项目不把 GUI 打包成自己的 exe，也不替代 WeFlow；本项目负责导出后的结构化解析和关系分析。
+来源提交、恢复原因和完整性验证记录在 `vendor/WeFlow/UPSTREAM_SOURCE.md`。WeFlow 负责读取本机微信数据并导出 JSON、HTML、TXT、Excel、CSV、ChatLab 等格式；本项目根目录的 Python CLI 负责导出后的结构化解析和关系分析。
+
+首次使用前，按 `vendor/WeFlow/README.md` 与 `vendor/WeFlow/package.json` 的脚本安装依赖并构建。不要从不明镜像下载可执行文件，也不要把聊天记录写入受 Git 跟踪的目录。
 
 ## 导出位置
 

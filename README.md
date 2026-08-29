@@ -15,7 +15,7 @@
 
 本项目引用并保留以下上游仓库快照：
 
-- 微信聊天导出工具：[hicccc77/WeFlow](https://github.com/hicccc77/WeFlow)，位于 `vendor/WeFlow/`
+- 微信聊天导出工具：WeFlow v5.0.0 完整源码快照，位于 `vendor/WeFlow/`；来源提交与恢复说明见 `vendor/WeFlow/UPSTREAM_SOURCE.md`
 - 追爱军师 Skill：[BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill)，位于 `vendor/simp-skill/`
 
 根目录下的 `SKILL.md`、`prompts/`、`tools/`、`tests/` 也来自 `simp-skill`，并作为本项目的分析能力基础保留。
@@ -24,7 +24,7 @@
 
 保留图形化导出流程。
 
-WeFlow 上游仓库的图形化工具说明和资源保存在 `vendor/WeFlow/`。实际使用时，你可以通过 WeFlow/WeLive 图形化界面导出微信聊天记录，得到类似这样的目录：
+WeFlow 的完整图形化应用源码、Windows 本地运行组件和导出实现保存在 `vendor/WeFlow/`。按该目录的 README 与 `package.json` 构建并运行后，可以通过 WeFlow/WeLive 图形化界面导出微信聊天记录，得到类似这样的目录：
 
 ```text
 record/
@@ -209,4 +209,4 @@ python -m pytest -q
 
 ## 备注
 
-`vendor/WeFlow/` 当前保留的是上游仓库公开快照。若上游后续补充完整源码或发布新的图形化工具代码，可以更新该目录并同步 README 中的说明。
+`vendor/WeFlow/` 固定保留 WeFlow v5.0.0 完整源码快照。更新该快照时必须同步 `vendor/WeFlow/UPSTREAM_SOURCE.md` 中的来源提交、文件清单验证结果和安全说明。

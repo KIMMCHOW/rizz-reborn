@@ -10,7 +10,7 @@ The internal package and command names remain `simp` for compatibility. Treat `é
 
 This project references and vendors source snapshots from:
 
-- WeChat export tool: [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow), stored at `vendor/WeFlow/`.
+- WeChat export tool: complete WeFlow v5.0.0 source snapshot stored at `vendor/WeFlow/`; see `vendor/WeFlow/UPSTREAM_SOURCE.md` for provenance.
 - Codex/Claude skill: [BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill), stored at `vendor/simp-skill/`.
 
 Personal analysis archives and generated reports must stay in ignored local folders.
@@ -35,7 +35,7 @@ python -m simp_project.cli init-crush "local_data\welive-records\some-chat" --na
 
 This project is intended to be run from source by Codex or Python scripts. Do not package it as a single `.exe`: Codex should call the source code, read the configured local WeChat export paths, and write private analysis results into ignored local folders.
 
-The graphical export step is preserved through WeFlow/WeLive. Use the GUI to produce JSONL records, then let Codex run the parser and analysis logic from source.
+The graphical export step is preserved as a complete WeFlow source snapshot, including its Windows runtime resources and export implementation. Build and run it from `vendor/WeFlow/`, use the GUI to produce records, then let Codex run the parser and analysis logic from source.
 
 ## Local Environment
 
