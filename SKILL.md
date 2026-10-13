@@ -17,6 +17,18 @@ user-invocable: true
 
 ---
 
+## 技能优先级（本仓库）
+
+本仓库同时接入 `vendor/goutoujunshi/`（狗头军师），且它的**权重更高**。冲突时按下面规则处理：
+
+- 方法论、证据分级、情绪支持、话术与伦理／安全边界的冲突，以狗头军师为准；
+- 本技能继续负责 `/simp` 指令、`crushes/` 档案、`events.jsonl` 事件流、`tools/` 与解析 CLI；
+- 目录布局、命名、隐私与 `local_outputs/` 路由始终以本仓库 SOP 为准。
+
+完整优先级、冲突裁决表与按需加载规则见 `docs/agent/SKILL_INTEGRATION.md`。
+
+---
+
 ## 模式系统
 
 用户可随时切换模式，默认为混合模式。

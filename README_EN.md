@@ -6,6 +6,7 @@ It is not just a copy of `simp-skill`, and it is not a repackaged WeFlow app. It
 
 - WeFlow/WeLive-style JSONL exports as the chat-data source;
 - `simp-skill` relationship-analysis prompts and memory structure;
+- `goutoujunshi` as the higher-priority layer for relationship judgment, messaging drafts, and safety boundaries;
 - this project's Python CLI for parsing exports, writing reports, and initializing local memory folders;
 - Codex running the source code directly against private local folders.
 
@@ -17,8 +18,20 @@ This project vendors source snapshots from:
 
 - WeChat export GUI/reference: [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow), stored in `vendor/WeFlow/`
 - Relationship-analysis skill: [BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill), stored in `vendor/simp-skill/`
+- Relationship-analysis skill (higher priority): [shengjidaguai-china/goutoujunshi](https://github.com/shengjidaguai-china/goutoujunshi), stored in `vendor/goutoujunshi/`; provenance and verification notes live in `vendor/goutoujunshi/UPSTREAM_SOURCE.md`
 
 The root `SKILL.md`, `prompts/`, `tools/`, and `tests/` are also kept from `simp-skill` as the analysis foundation for this project.
+
+## Skill Layering and Priority
+
+This project ships two relationship-analysis skills with a fixed priority order (highest first):
+
+1. Repository safety, privacy, and local-output SOPs
+2. `goutoujunshi`: methodology, evidence grading, emotional support, messaging, and ethical/safety boundaries
+3. `simp`: `/simp` commands, `crushes/` archives, event streams, CLI, and chat parsing
+4. WeFlow: WeChat record export
+
+When methodology or advice conflicts, `goutoujunshi` wins. Directory layout, naming, privacy, and `local_outputs/` routing still follow this repository's SOPs. See [`docs/agent/SKILL_INTEGRATION.md`](docs/agent/SKILL_INTEGRATION.md) for the full conflict-resolution table, on-demand loading rules, and data boundaries.
 
 ## Graphical Interface
 
@@ -139,3 +152,10 @@ python -m pytest -q
 ```
 
 `pytest.ini` limits collection to the root `tests/` directory so vendored `vendor/simp-skill/tests/` are not collected twice.
+
+The vendored `goutoujunshi` snapshot ships its own structural validator:
+
+```powershell
+python vendor\goutoujunshi\scripts\validate_skill.py
+python vendor\goutoujunshi\scripts\validate_skill.py --runtime
+```

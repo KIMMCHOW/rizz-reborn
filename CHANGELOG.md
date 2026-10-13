@@ -4,6 +4,19 @@
 
 ---
 
+## [未发布] - 2026-10-14
+
+### 新增
+- 接入狗头军师 Skill 快照 `vendor/goutoujunshi/`：上游 `shengjidaguai-china/goutoujunshi` 提交 `6db7354a4002dc7c448a9c87ffdad8132570c9d3`（MIT），共 68 个受跟踪文件；来源、验证与许可说明见 `vendor/goutoujunshi/UPSTREAM_SOURCE.md`
+- `docs/agent/SKILL_INTEGRATION.md`：技能分层与优先级 SOP，规定狗头军师权重更高，并给出冲突裁决表、按需加载规则、数据与隐私边界
+- `SKILL.md`：新增「技能优先级（本仓库）」章节，声明狗头军师为更高优先级的关系分析层
+- `tests/test_vendored_goutoujunshi_snapshot.py`：校验快照结构完整并运行上游自带校验器
+
+### 改进
+- `README.md` / `README_EN.md` / `PROJECT.md` / `vendor/README.md`：补充狗头军师上游引用、技能优先级说明与独立校验命令
+
+---
+
 ## [1.6.0] - 2026-04-28
 
 ### 新增

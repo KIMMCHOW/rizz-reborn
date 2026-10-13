@@ -6,6 +6,7 @@
 
 - 用 WeFlow/WeLive 风格导出的微信 JSONL 作为聊天数据来源；
 - 用 `simp-skill` 的追爱军师方法论和记忆结构做关系分析；
+- 用 `goutoujunshi`（狗头军师）作为更高优先级的关系判断、话术与安全边界层；
 - 用本项目的 Python CLI 解析导出、生成报告、建立本地档案；
 - 由 Codex 直接读取源码和本地私有目录完成分析。
 
@@ -17,8 +18,20 @@
 
 - 微信聊天导出工具：WeFlow v5.0.0 完整源码快照，位于 `vendor/WeFlow/`；来源提交与恢复说明见 `vendor/WeFlow/UPSTREAM_SOURCE.md`
 - 追爱军师 Skill：[BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill)，位于 `vendor/simp-skill/`
+- 狗头军师 Skill：[shengjidaguai-china/goutoujunshi](https://github.com/shengjidaguai-china/goutoujunshi)，位于 `vendor/goutoujunshi/`；来源提交与验证说明见 `vendor/goutoujunshi/UPSTREAM_SOURCE.md`
 
 根目录下的 `SKILL.md`、`prompts/`、`tools/`、`tests/` 也来自 `simp-skill`，并作为本项目的分析能力基础保留。
+
+## 技能分层与优先级
+
+本项目同时接入两套关系分析技能，并固定以下优先级（从高到低）：
+
+1. 本仓库安全、隐私与本地输出 SOP
+2. `goutoujunshi`（狗头军师）：方法论、证据分级、情绪支持、话术、伦理与安全边界
+3. `simp`（追爱军师）：`/simp` 指令、`crushes/` 档案、事件流、CLI 与聊天解析
+4. WeFlow：微信记录导出
+
+方法论或建议冲突时默认采纳狗头军师；目录、命名、隐私与 `local_outputs/` 路由仍以本仓库 SOP 为准。完整冲突裁决、按需加载规则与数据边界见 [`docs/agent/SKILL_INTEGRATION.md`](docs/agent/SKILL_INTEGRATION.md)。
 
 ## 图形化界面
 
@@ -60,10 +73,11 @@ simp/                       # 项目展示名：重生之我是把妹王
   tests/                     # 测试
   vendor/WeFlow/             # WeFlow 上游快照
   vendor/simp-skill/         # simp-skill 上游快照
+  vendor/goutoujunshi/       # 狗头军师上游快照（更高优先级技能）
   docs/wechat-export/        # 微信导出说明
   local_data/                # 本地私有数据，git 忽略
   local_outputs/             # 分类存放本地私有报告，git 忽略
-  docs/agent/                # 本地输出与 Agent 工作流 SOP
+  docs/agent/                # 本地输出 SOP 与技能分层规则
   .env                       # 本机私有配置，git 忽略
   .env.example               # 环境变量模板，可提交
 ```
@@ -227,6 +241,15 @@ python -m pytest -q
 
 当前测试范围通过 `pytest.ini` 限定在根目录 `tests/`，避免重复收集 `vendor/simp-skill/tests/`。
 
+狗头军师快照自带结构校验，可单独运行：
+
+```powershell
+python vendor\goutoujunshi\scripts\validate_skill.py
+python vendor\goutoujunshi\scripts\validate_skill.py --runtime
+```
+
 ## 备注
 
 `vendor/WeFlow/` 固定保留 WeFlow v5.0.0 完整源码快照。更新该快照时必须同步 `vendor/WeFlow/UPSTREAM_SOURCE.md` 中的来源提交、文件清单验证结果和安全说明。
+
+`vendor/goutoujunshi/` 固定保留狗头军师快照。更新该快照时必须同步 `vendor/goutoujunshi/UPSTREAM_SOURCE.md` 中的来源提交、文件数验证结果和许可说明，并重跑上面的校验命令。优先级规则只在 `SKILL.md` 与 `docs/agent/SKILL_INTEGRATION.md` 中维护，不要直接改快照内容。

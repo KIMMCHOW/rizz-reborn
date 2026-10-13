@@ -105,6 +105,7 @@ Codex 应直接读取项目源码：
 - `src/simp_project/`
 - `SKILL.md`
 - `prompts/`
+- `vendor/goutoujunshi/`（更高优先级的关系分析技能，按需读取 `references/`）
 - `.env`
 - `local_data/`
 
@@ -114,5 +115,7 @@ Codex 应直接读取项目源码：
 - `local_outputs/`
 
 生成报告时必须继续细分到 `local_outputs/<scope>/<slug>/<domain>/`，不要把文件散落在输出根目录。
+
+技能之间的优先级与冲突裁决见 [`../agent/SKILL_INTEGRATION.md`](../agent/SKILL_INTEGRATION.md)：方法论以狗头军师优先，目录、命名与隐私规则仍以本仓库 SOP 为准。
 
 不要生成单 exe，也不要把原始聊天记录、档案和报告加入 Git。

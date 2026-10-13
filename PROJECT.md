@@ -12,8 +12,13 @@ This project references and vendors source snapshots from:
 
 - WeChat export tool: complete WeFlow v5.0.0 source snapshot stored at `vendor/WeFlow/`; see `vendor/WeFlow/UPSTREAM_SOURCE.md` for provenance.
 - Codex/Claude skill: [BeamusWayne/simp-skill](https://github.com/BeamusWayne/simp-skill), stored at `vendor/simp-skill/`.
+- Higher-priority Codex skill: [shengjidaguai-china/goutoujunshi](https://github.com/shengjidaguai-china/goutoujunshi), stored at `vendor/goutoujunshi/`; see `vendor/goutoujunshi/UPSTREAM_SOURCE.md` for provenance and verification.
 
 Personal analysis archives and generated reports must stay in ignored local folders.
+
+## Skill Layering
+
+Two relationship-analysis skills ship with this project. The fixed priority order, highest first, is: repository safety/privacy/local-output SOPs, then `goutoujunshi` (methodology, evidence grading, emotional support, messaging, ethical and safety boundaries), then `simp` (`/simp` commands, `crushes/` archives, event streams, CLI, chat parsing), then WeFlow (export). When advice conflicts, `goutoujunshi` wins; directory layout, naming, privacy, and `local_outputs/` routing remain governed by this repository's SOPs. The executable rules live in `SKILL.md` and `docs/agent/SKILL_INTEGRATION.md`.
 
 ## Quick Start
 
@@ -56,6 +61,8 @@ Current environment variables:
 - `src/simp_project/`: project CLI and WeLive JSONL parser.
 - `vendor/WeFlow/`: upstream WeFlow repository snapshot.
 - `vendor/simp-skill/`: upstream simp-skill repository snapshot.
+- `vendor/goutoujunshi/`: upstream goutoujunshi repository snapshot, layered above `simp` as the higher-priority skill. Do not edit it to change project behavior.
+- `docs/agent/SKILL_INTEGRATION.md`: skill layering, conflict resolution, on-demand loading, and privacy boundaries.
 - `local_data/` or `data/`: optional private memory files, ignored by git.
 - `local_outputs/` or `outputs/`: optional generated reports, ignored by git. Keep the root free of loose files and follow `docs/agent/LOCAL_OUTPUTS_SOP.md`.
 
