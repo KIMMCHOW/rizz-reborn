@@ -15,7 +15,7 @@
 
 ### 改进
 - `README.md` / `README_EN.md` / `PROJECT.md` / `vendor/README.md`：补充狗头军师上游引用、技能优先级说明与独立校验命令
-- 已清理本地忽略产物：`vendor/WeFlow/dist`、`vendor/WeFlow/dist-electron`、`.pytest_cache` 与各类 `__pycache__`（约 38 MB，可由构建与测试重新生成）
+- 已清理本地忽略产物：`vendor/WeFlow/dist`、`vendor/WeFlow/dist-electron`、`.pytest_cache`、各类 `__pycache__`，以及经用户确认后删除的 `vendor/WeFlow/release` 与 `vendor/WeFlow/node_modules`（合计约 1.7 GB；构建产物可重新构建，依赖可用 `npm ci` 恢复）
 
 ---
 
