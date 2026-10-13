@@ -248,6 +248,17 @@ python vendor\goutoujunshi\scripts\validate_skill.py
 python vendor\goutoujunshi\scripts\validate_skill.py --runtime
 ```
 
+### 忽略产物安全清理
+
+被忽略的构建产物与本地缓存统一走白名单脚本，默认只做 dry-run：
+
+```powershell
+pwsh -File scripts\clean-ignored-safe.ps1          # 只报告，不删除
+pwsh -File scripts\clean-ignored-safe.ps1 -Apply   # 执行删除
+```
+
+脚本只处理同时满足「位于仓库内 + 被 Git 忽略 + 无受跟踪文件」的路径，绝不使用 `git clean`，也不会触碰 `local_data/`、`local_outputs/`、`.env*`。`vendor/WeFlow/release/`（安装包与可运行程序）和 `vendor/WeFlow/node_modules/`（依赖目录）是受保护候选，必须显式追加 `-IncludeRelease` 或 `-IncludeNodeModules` 才会删除。
+
 ## 备注
 
 `vendor/WeFlow/` 固定保留 WeFlow v5.0.0 完整源码快照。更新该快照时必须同步 `vendor/WeFlow/UPSTREAM_SOURCE.md` 中的来源提交、文件清单验证结果和安全说明。

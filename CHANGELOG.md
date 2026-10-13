@@ -11,9 +11,11 @@
 - `docs/agent/SKILL_INTEGRATION.md`：技能分层与优先级 SOP，规定狗头军师权重更高，并给出冲突裁决表、按需加载规则、数据与隐私边界
 - `SKILL.md`：新增「技能优先级（本仓库）」章节，声明狗头军师为更高优先级的关系分析层
 - `tests/test_vendored_goutoujunshi_snapshot.py`：校验快照结构完整并运行上游自带校验器
+- `scripts/clean-ignored-safe.ps1`：白名单式忽略产物清理脚本，默认 dry-run；只处理「仓库内 + Git 忽略 + 无受跟踪文件」的路径，并把 `vendor/WeFlow/release` 与 `vendor/WeFlow/node_modules` 设为需显式开关的受保护候选
 
 ### 改进
 - `README.md` / `README_EN.md` / `PROJECT.md` / `vendor/README.md`：补充狗头军师上游引用、技能优先级说明与独立校验命令
+- 已清理本地忽略产物：`vendor/WeFlow/dist`、`vendor/WeFlow/dist-electron`、`.pytest_cache` 与各类 `__pycache__`（约 38 MB，可由构建与测试重新生成）
 
 ---
 

@@ -159,3 +159,14 @@ The vendored `goutoujunshi` snapshot ships its own structural validator:
 python vendor\goutoujunshi\scripts\validate_skill.py
 python vendor\goutoujunshi\scripts\validate_skill.py --runtime
 ```
+
+### Safe ignored-artifact cleanup
+
+Ignored build output and local caches are cleaned through a whitelist script that dry-runs by default:
+
+```powershell
+pwsh -File scripts\clean-ignored-safe.ps1          # report only
+pwsh -File scripts\clean-ignored-safe.ps1 -Apply   # delete
+```
+
+It never runs `git clean` and only touches paths that are inside the repository, reported ignored by Git, and free of tracked files. `local_data/`, `local_outputs/`, and `.env*` are never touched. `vendor/WeFlow/release/` (packaged installer and runnable app) and `vendor/WeFlow/node_modules/` are protected candidates that require the explicit `-IncludeRelease` or `-IncludeNodeModules` switch.
